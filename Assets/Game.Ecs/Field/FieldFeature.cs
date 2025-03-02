@@ -1,0 +1,43 @@
+﻿namespace Game.Ecs.Field
+{
+    using Cysharp.Threading.Tasks;
+    using Game.Ecs.Field.Components;
+    using Game.Ecs.Field.Systems;
+    using Leopotam.EcsLite;
+    using Leopotam.EcsLite.ExtendedSystems;
+    using Runtime.Services.FieldService;
+    using UniGame.Context.Runtime.Extension;
+    using UniGame.Core.Runtime;
+    using UniGame.LeoEcs.Bootstrap.Runtime;
+    using UniGame.LeoEcs.Shared.Extensions;
+    using UnityEngine;
+
+    /// <summary>
+    /// ADD DESCRIPTION HERE
+    /// </summary>
+    [CreateAssetMenu(menuName = "Game/Feature/Gameplay/FiledFeature")]
+    public class FieldFeature : BaseLeoEcsFeature
+    {
+        public FieldSettings settings;
+        public override async UniTask InitializeFeatureAsync(IEcsSystems ecsSystems)
+        {
+            var context = ecsSystems.GetShared<IContext>();
+            var service = await context.ReceiveFirstAsync<IFieldService>();
+            var world = ecsSystems.GetWorld();
+            world.SetGlobal(service);
+            ecsSystems.Add(new GenerateFieldSystem());
+            ecsSystems.DelHere<GenerateFieldRequest>();
+            
+            
+            // ecsSystems.Add(new GenerateMinesSystem());
+
+        }
+    }
+
+    public class FieldSettings
+    {
+        public int width;
+        public int height;
+        public int minesCount;
+    }
+}

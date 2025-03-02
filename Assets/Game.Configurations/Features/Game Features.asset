@@ -18,7 +18,8 @@ MonoBehaviour:
     name: Game Features
     _active: 1
     _systems: []
-    nestedFeatures: []
+    nestedFeatures:
+    - {fileID: 11400000, guid: b25090d8ba87a054e8579a5a5a7713d1, type: 2}
     serializableFeatures: []
   references:
     version: 2

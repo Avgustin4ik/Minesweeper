@@ -18,7 +18,55 @@ MonoBehaviour:
   - Assets/Game.Content/UI
   viewsAssetsSources: []
   uiViewsSkinFolders: []
-  uiViews: []
+  uiViews:
+  - AssetGUID: 077aee17ebd0cf640a55b9fbb3a537e5
+    View:
+      m_AssetGUID: 077aee17ebd0cf640a55b9fbb3a537e5
+      m_SubObjectName: 
+      m_SubObjectGUID: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    ViewName: CellView
+    Tag: 
+    Type:
+      name: CellView
+      fullTypeName: Game.Ecs.Ui.FieldView.ViewsAndModels.CellView, game.ecs.ui.field,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    ModelType:
+      name: CellViewModel
+      fullTypeName: Game.Ecs.Ui.FieldView.ViewsAndModels.CellViewModel, game.ecs.ui.field,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    ViewModelType:
+      name: CellViewModel
+      fullTypeName: Game.Ecs.Ui.FieldView.ViewsAndModels.CellViewModel, game.ecs.ui.field,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    PoolingPreloadCount: 1
+    Atlases: []
+    Hash: 1838934702
+  - AssetGUID: 255a96aa8fad79348b8ae5159f4f5d57
+    View:
+      m_AssetGUID: 255a96aa8fad79348b8ae5159f4f5d57
+      m_SubObjectName: 
+      m_SubObjectGUID: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    ViewName: Panel Main
+    Tag: 
+    Type:
+      name: FieldView
+      fullTypeName: Game.Ecs.Ui.FieldView.ViewsAndModels.FieldView, game.ecs.ui.field,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    ModelType:
+      name: FieldViewModel
+      fullTypeName: Game.Ecs.Ui.FieldView.ViewsAndModels.FieldViewModel, game.ecs.ui.field,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    ViewModelType:
+      name: FieldViewModel
+      fullTypeName: Game.Ecs.Ui.FieldView.ViewsAndModels.FieldViewModel, game.ecs.ui.field,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    PoolingPreloadCount: 1
+    Atlases: []
+    Hash: 1925726292
   applyAddressablesGroup: 0
   labels: []
   addressableGroupName: 
