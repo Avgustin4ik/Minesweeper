@@ -1,0 +1,78 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Icons
+  m_EditorClassIdentifier: 
+  m_GroupName: Icons
+  m_GUID: 6d942a3db4629b844813d59dc12cbfc8
+  m_SerializeEntries:
+  - m_GUID: 1992d9c4c86168c4188619829cbca6d2
+    m_Address: Assets/Game.Content/Art/Icons/Atlases/WhiteIcons_64x64.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 26ec879391608ec438775736d92f6bd1
+    m_Address: Assets/Game.Content/Art/Icons/Default/TileCircle.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 27b5bbcb3498cb942a0849169ce4dd23
+    m_Address: Assets/Game.Content/Art/Icons
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 41430746ccfb8614fa3482c0a8c29e47
+    m_Address: Assets/Game.Content/Art/Icons/Default
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4ff474e687f3f3946980e9ef73e8f38b
+    m_Address: Assets/Game.Content/Art/Icons/Default/1x1_white.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7c5d0e85d3be7c146bebff4e1ff51459
+    m_Address: Assets/Game.Content/Art/Icons/Atlases
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7fabe513baaa11b4f9928a5d6d9f70f9
+    m_Address: Assets/Game.Content/Art/Icons/Atlases/colorIcons_256x256.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 95e9ef24bf3fee14191f1e22d647e3be
+    m_Address: Assets/Game.Content/Art/Icons/Default/Stroced_Circle_65.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b1755eb4cf23e2946b7229cd81da59ca
+    m_Address: Assets/Game.Content/Art/Icons/Default/Stroced_Circle_15.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d1e4a5b27b5d7b749b11652e5b430023
+    m_Address: Assets/Game.Content/Art/Icons/Default/Triangle.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f95e8a788b0c42742b29d77d9783d555
+    m_Address: Assets/Game.Content/Art/Icons/Default/Circle.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 75d1837b3b2ce574582f562d03d6b8be, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: c65e25935176b434f9b586fd088598c5, type: 2}
+    - {fileID: 11400000, guid: 9a5a4ed20c3f6004ab84b1c8fd3e1693, type: 2}

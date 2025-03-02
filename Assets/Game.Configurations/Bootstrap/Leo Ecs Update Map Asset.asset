@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbbe3a5e543c24347931591abfcf21ce, type: 3}
+  m_Name: Leo Ecs Update Map Asset
+  m_EditorClassIdentifier: 
+  updateQueue:
+  - OrderId: Update
+    Factory:
+      rid: 1988457157760909542
+  - OrderId: Fixed_Update
+    Factory:
+      rid: 1988457157760909543
+  - OrderId: Late_Update
+    Factory:
+      rid: 1988457157760909544
+  systemsPlugins:
+  - rid: 1988457157760909541
+  defaultFactory:
+    rid: 1988457157760909540
+  references:
+    version: 2
+    RefIds:
+    - rid: 1988457157760909540
+      type: {class: LeoEcsUniTaskUpdateProvider, ns: UniGame.LeoEcs.Bootstrap.Runtime.Config, asm: unigame.leoecs.bootstrap.runtime}
+      data:
+        updateType: 1
+    - rid: 1988457157760909541
+      type: {class: GizmosUpdateProvider, ns: UniGame.LeoEcs.Bootstrap.Runtime.Config, asm: unigame.leoecs.bootstrap.runtime}
+      data: 
+    - rid: 1988457157760909542
+      type: {class: LeoEcsUniTaskUpdateProvider, ns: UniGame.LeoEcs.Bootstrap.Runtime.Config, asm: unigame.leoecs.bootstrap.runtime}
+      data:
+        updateType: 1
+    - rid: 1988457157760909543
+      type: {class: LeoEcsUniTaskUpdateProvider, ns: UniGame.LeoEcs.Bootstrap.Runtime.Config, asm: unigame.leoecs.bootstrap.runtime}
+      data:
+        updateType: 2
+    - rid: 1988457157760909544
+      type: {class: LeoEcsUniTaskUpdateProvider, ns: UniGame.LeoEcs.Bootstrap.Runtime.Config, asm: unigame.leoecs.bootstrap.runtime}
+      data:
+        updateType: 3

@@ -1,0 +1,73 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Default Local Group
+  m_EditorClassIdentifier: 
+  m_GroupName: Default Local Group
+  m_GUID: 5edf00bee87d86349aa6ca787eb08426
+  m_SerializeEntries:
+  - m_GUID: 001dafd975994864ea29ef4c907c3029
+    m_Address: GameBootSettings
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1e8e8f86176e2d9459f2693bf1533de6
+    m_Address: Assets/Game.Configurations/Database/Addressable Game Data Category.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4a9701515b796ee49aeb81dc3711a5a4
+    m_Address: Assets/Game.Configurations/ViewSystems/ViewSystemAsset.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5552d1d223234d340ad5a7c5eb91e5f3
+    m_Address: Assets/Game.Configurations/ViewSystems/View System Source.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8a31d78abe031ef4eb9795d28729acbf
+    m_Address: Assets/Game.Configurations/Bootstrap/Leo Ecs Update Map Asset.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d8793315bd7565245a449a8752293b96
+    m_Address: Assets/Game.Configurations/Bootstrap/Leo Ecs Service Source.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: da59054b6721858448ef66624a3551a0
+    m_Address: Assets/Game.Configurations/ViewSystems/ViewSystemSettings.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ebe99c1767164f5478075e7a58e88e1c
+    m_Address: Assets/Game.Configurations/Database/Game Data Base Asset.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ef148f121830b3a408400df7cb339303
+    m_Address: Assets/Game.Configurations/Bootstrap/Bootstrap Async Data Sources.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: feee36db40166c149adbc70ed5fc8deb
+    m_Address: Assets/Game.Configurations/Database/Game Data Service Source.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 75d1837b3b2ce574582f562d03d6b8be, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 3c3c4f516c09ba54497490435d190b81, type: 2}
+    - {fileID: 11400000, guid: 6c1fd3e74818f4a4986dfe0101824af9, type: 2}

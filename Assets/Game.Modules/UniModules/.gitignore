@@ -1,0 +1,45 @@
+# .gitignore
+
+# Unity
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Ll]og/
+/[Ll]ogs/
+/[Bb]uild/
+/[Bb]uilds/
+/Assets/AssetStoreTools*
+sysinfo.txt
+*.pidb.meta
+ 
+# VS/Rider/MD/Consulo
+ExportedObj/
+.consulo/
+.idea/
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.tmp
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.vs/
+
+# Addressable Importer Module
+UnityAddressableImporter/CHANGELOG.md.meta
+UnityAddressableImporter/Editor.meta
+UnityAddressableImporter/LICENSE.md.meta
+UnityAddressableImporter/Media.meta
+UnityAddressableImporter/package.json.meta
+UnityAddressableImporter/README.md.meta
+UnityAddressableImporter/Runtime.meta
+UnityAddressableImporter/Tests.meta
+
+ 
+# Builds
+*.apk
+*.unitypackage
+*.app
+*.exe

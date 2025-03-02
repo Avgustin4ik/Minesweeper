@@ -1,0 +1,16 @@
+{
+  "name": "com.unigame.codewriter",
+  "author": "UniGame",
+  "displayName": "UniGame Code Generator Tools",
+  "description": "",
+  "unity": "2019.2",
+  "version": "2022.0.0",
+  "keywords": [
+    "editor",
+    "codogen",
+    "utils"
+  ],
+  "dependencies": {
+    "com.unigame.unicore": "2022.0.0"
+  }
+}

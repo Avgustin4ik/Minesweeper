@@ -1,0 +1,21 @@
+{
+  "name": "com.unigame.multiscenes",
+  "author": "UniGame",
+  "displayName": "Unity Multi-Scenes support",
+  "description": "Unity Multi scenes support",
+  "unity": "2022.1",
+  "version": "2024.0.1",
+  "homepage": "https://github.com/UnioGame/MultiScenes#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/UnioGame/MultiScenes"
+  },
+  "keywords": [
+    "Tools",
+    "Multiscenes",
+    "Scene"
+  ],
+  "dependencies": {
+    "com.unity.addressables": "1.21.19"
+  }
+}

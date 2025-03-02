@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aae07ff0f2f57ef4085d24a57744e13d, type: 3}
+  m_Name: Leo Ecs Features Configuration
+  m_EditorClassIdentifier: 
+  worldConfiguration:
+    Entities: 512
+    RecycledEntities: 512
+    Pools: 512
+    Filters: 512
+    PoolDenseSize: 512
+    PoolRecycledSize: 512
+    EntityComponentsSize: 8
+  ecsUpdateGroups:
+  - updateType: Update
+    features:
+    - featureGroupAsset: {fileID: 11400000, guid: 07e96c1c0b435624c90c7db2a348083c, type: 2}
+      featureGroup:
+        rid: -2
+    - featureGroupAsset: {fileID: 11400000, guid: d555ae20cc0a8f546bb076c82d0c9a81, type: 2}
+      featureGroup:
+        rid: -2
+    - featureGroupAsset: {fileID: 11400000, guid: 1934ec95705e40149b9cb195f860eb26, type: 2}
+      featureGroup:
+        rid: -2
+  - updateType: Late_Update
+    features:
+    - featureGroupAsset: {fileID: 11400000, guid: 233f7c29c5abc824cb9ac0d78e493b4a, type: 2}
+      featureGroup:
+        rid: -2
+    - featureGroupAsset: {fileID: 11400000, guid: 288ac1df426c26d4e95b866b0f1b87a4, type: 2}
+      featureGroup:
+        rid: -2
+    - featureGroupAsset: {fileID: 11400000, guid: c00c8254ed80b8b4c961f68076efc3e8, type: 2}
+      featureGroup:
+        rid: -2
+  - updateType: Fixed_Update
+    features: []
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }

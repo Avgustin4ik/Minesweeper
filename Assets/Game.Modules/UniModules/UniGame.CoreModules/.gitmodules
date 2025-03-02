@@ -1,0 +1,28 @@
+[submodule "UniGame.Context"]
+	path = UniGame.Context
+	url = https://github.com/UniGameTeam/UniGame.Context.git
+	branch = main
+[submodule "UniGame.Rx"]
+	path = UniGame.Rx
+	url = https://github.com/UniGameTeam/UniGame.Rx.git
+	branch = main
+[submodule "UniGame.TypeConverters"]
+	path = UniGame.TypeConverters
+	url = https://github.com/UniGameTeam/UniGame.TypeConverters.git
+	branch = main
+[submodule "UniGame.EditorTools"]
+	path = UniGame.EditorTools
+	url = https://github.com/UniGameTeam/UniGame.EditorTools.git
+	branch = master
+[submodule "UniGame.CodeWriter"]
+	path = UniGame.CodeWriter
+	url = https://github.com/UniGameTeam/UniGame.CodeWriter.git
+	branch = master
+[submodule "UniGame.AddressableTools"]
+	path = UniGame.AddressableTools
+	url = https://github.com/UniGameTeam/UniGame.AddressableTools.git
+	branch = main
+[submodule "UniGame.Core"]
+	path = UniGame.Core
+	url = https://github.com/UniGameTeam/UniGame.Core.git
+	branch = main

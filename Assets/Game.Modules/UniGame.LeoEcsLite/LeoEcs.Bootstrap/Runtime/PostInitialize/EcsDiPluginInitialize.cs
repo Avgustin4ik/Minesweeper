@@ -1,0 +1,59 @@
+﻿namespace UniGame.LeoEcs.Bootstrap.Runtime.PostInitialize
+{
+    using System;
+    using System.Collections.Generic;
+    using Abstract;
+    using Attributes;
+    using Core.Runtime;
+    using Leopotam.EcsLite;
+    using UniModules.UniCore.Runtime.ReflectionUtils;
+
+    [Serializable]
+    public class EcsDiPostInitialize : IEcsPostInitializeAction
+    {
+        private Type _diAttributeType = typeof(ECSDIAttribute);
+        private List<IEcsDiInjection> _injections = null;
+
+        public EcsDiPostInitialize()
+        {
+            _injections = new List<IEcsDiInjection>()
+            {
+                new EcsDiWorldInjection(),
+                new EcsDiPoolInjection(),
+                new EcsDiAspectInjection(),
+                new EcsDiFilterInjection(),
+            };
+        }
+
+        public (IEcsSystems value, bool replace) Apply(IEcsSystems ecsSystems,IContext context)
+        {
+            foreach (var ecsSystem in ecsSystems.GetAllSystems())
+            {
+                Apply(ecsSystems,ecsSystem);
+            }
+            return (ecsSystems,false);
+        }
+        
+        public void Apply(IEcsSystems ecsSystems,IEcsSystem system)
+        {
+            var world = ecsSystems.GetWorld();
+            if (world == null) return;
+            
+            var systemType = system.GetType();
+            var isDiSystem = systemType.HasAttribute<ECSDIAttribute>();
+            var fields = systemType.GetInstanceFields();
+            
+            foreach (var field in fields)
+            {
+                var isDiTarget = isDiSystem || Attribute.IsDefined (field, _diAttributeType);
+                if(!isDiTarget) continue;
+
+                foreach (var injection in _injections)
+                    injection.ApplyInjection(ecsSystems,field,system,_injections);
+            }
+        }
+        
+    }
+    
+    
+}

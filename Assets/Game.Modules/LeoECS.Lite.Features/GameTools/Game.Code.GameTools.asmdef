@@ -1,0 +1,26 @@
+{
+    "name": "Game.Code.GameTools",
+    "rootNamespace": "",
+    "references": [
+        "GUID:4185675af2c91ce438157b41079cd107",
+        "GUID:8e4577c9194c10845984cf27eb974fd1",
+        "GUID:d8b63aba1907145bea998dd612889d6b"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [
+        "LEO_ECS_ENABLED"
+    ],
+    "versionDefines": [
+        {
+            "name": "com.leopotam.ecslite",
+            "expression": "2023.0.0",
+            "define": "LEO_ECS_ENABLED"
+        }
+    ],
+    "noEngineReferences": false
+}

@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c91fd536d0024dcc88383f47e5d33410, type: 3}
+  m_Name: Leo Ecs Service Source
+  m_EditorClassIdentifier: 
+  enabled: 1
+  isSharedSystem: 1
+  waitServiceReady: 0
+  ownServiceLifeTime: 1
+  featureTimeout: 20000
+  ecsConfiguration: {fileID: 11400000, guid: 2f8d4a7509357874d81276b33ee19659, type: 2}
+  updatesMap: {fileID: 11400000, guid: 8a31d78abe031ef4eb9795d28729acbf, type: 2}
+  _runtimeConfiguration: {fileID: 0}

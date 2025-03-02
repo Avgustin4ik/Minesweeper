@@ -1,0 +1,206 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1123ff6e6fc4e82af73f6ab7d4b33fa, type: 3}
+  m_Name: Addressable Game Data Category
+  m_EditorClassIdentifier: 
+  category: 
+  useAssetResourceProvider: 0
+  resourceProvider:
+    rid: 2738984680216854706
+  resourceLocation: {fileID: 0}
+  records:
+  - name: Addressable Game Data Category
+    assetReference:
+      m_AssetGUID: 1e8e8f86176e2d9459f2693bf1533de6
+      m_SubObjectName: 
+      m_SubObjectGUID: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    labels: []
+  - name: Game Data Service Source
+    assetReference:
+      m_AssetGUID: feee36db40166c149adbc70ed5fc8deb
+      m_SubObjectName: 
+      m_SubObjectGUID: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    labels: []
+  - name: Game Data Base Asset
+    assetReference:
+      m_AssetGUID: ebe99c1767164f5478075e7a58e88e1c
+      m_SubObjectName: 
+      m_SubObjectGUID: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    labels: []
+  - name: Bootstrap Async Data Sources
+    assetReference:
+      m_AssetGUID: ef148f121830b3a408400df7cb339303
+      m_SubObjectName: 
+      m_SubObjectGUID: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    labels: []
+  - name: Leo Ecs Service Source
+    assetReference:
+      m_AssetGUID: d8793315bd7565245a449a8752293b96
+      m_SubObjectName: 
+      m_SubObjectGUID: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    labels: []
+  - name: Game Boot Settings
+    assetReference:
+      m_AssetGUID: 001dafd975994864ea29ef4c907c3029
+      m_SubObjectName: 
+      m_SubObjectGUID: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    labels: []
+  - name: Leo Ecs Update Map Asset
+    assetReference:
+      m_AssetGUID: 8a31d78abe031ef4eb9795d28729acbf
+      m_SubObjectName: 
+      m_SubObjectGUID: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    labels: []
+  - name: View System Source
+    assetReference:
+      m_AssetGUID: 5552d1d223234d340ad5a7c5eb91e5f3
+      m_SubObjectName: 
+      m_SubObjectGUID: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    labels: []
+  - name: ViewSystemAsset
+    assetReference:
+      m_AssetGUID: 4a9701515b796ee49aeb81dc3711a5a4
+      m_SubObjectName: 
+      m_SubObjectGUID: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    labels: []
+  - name: ViewSystemSettings
+    assetReference:
+      m_AssetGUID: da59054b6721858448ef66624a3551a0
+      m_SubObjectName: 
+      m_SubObjectGUID: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    labels: []
+  - name: WhiteIcons_64x64
+    assetReference:
+      m_AssetGUID: 1992d9c4c86168c4188619829cbca6d2
+      m_SubObjectName: 
+      m_SubObjectGUID: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    labels: []
+  - name: TileCircle
+    assetReference:
+      m_AssetGUID: 26ec879391608ec438775736d92f6bd1
+      m_SubObjectName: 
+      m_SubObjectGUID: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    labels: []
+  - name: Icons
+    assetReference:
+      m_AssetGUID: 27b5bbcb3498cb942a0849169ce4dd23
+      m_SubObjectName: 
+      m_SubObjectGUID: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    labels: []
+  - name: Default
+    assetReference:
+      m_AssetGUID: 41430746ccfb8614fa3482c0a8c29e47
+      m_SubObjectName: 
+      m_SubObjectGUID: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    labels: []
+  - name: 1x1_white
+    assetReference:
+      m_AssetGUID: 4ff474e687f3f3946980e9ef73e8f38b
+      m_SubObjectName: 
+      m_SubObjectGUID: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    labels: []
+  - name: Atlases
+    assetReference:
+      m_AssetGUID: 7c5d0e85d3be7c146bebff4e1ff51459
+      m_SubObjectName: 
+      m_SubObjectGUID: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    labels: []
+  - name: colorIcons_256x256
+    assetReference:
+      m_AssetGUID: 7fabe513baaa11b4f9928a5d6d9f70f9
+      m_SubObjectName: 
+      m_SubObjectGUID: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    labels: []
+  - name: Stroced_Circle_65
+    assetReference:
+      m_AssetGUID: 95e9ef24bf3fee14191f1e22d647e3be
+      m_SubObjectName: 
+      m_SubObjectGUID: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    labels: []
+  - name: Stroced_Circle_15
+    assetReference:
+      m_AssetGUID: b1755eb4cf23e2946b7229cd81da59ca
+      m_SubObjectName: 
+      m_SubObjectGUID: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    labels: []
+  - name: Triangle
+    assetReference:
+      m_AssetGUID: d1e4a5b27b5d7b749b11652e5b430023
+      m_SubObjectName: 
+      m_SubObjectGUID: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    labels: []
+  - name: Circle
+    assetReference:
+      m_AssetGUID: f95e8a788b0c42742b29d77d9783d555
+      m_SubObjectName: 
+      m_SubObjectGUID: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    labels: []
+  - name: UI
+    assetReference:
+      m_AssetGUID: a0105bd277f7a8347a016ec0c39d3030
+      m_SubObjectName: 
+      m_SubObjectGUID: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    labels: []
+  filterData:
+    folders: []
+    labels: []
+    regex: []
+  references:
+    version: 2
+    RefIds:
+    - rid: 2738984680216854706
+      type: {class: AddressableResourceProvider, ns: Game.Code.DataBase.Runtime, asm: Game.Code.GameDatabase.Runtime}
+      data: 

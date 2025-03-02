@@ -1,0 +1,20 @@
+{
+  "name": "com.unigame.editortools",
+  "author": "UniGame",
+  "displayName": "UniGame Editor Tools",
+  "description": "Unity3D Editor Tools Collection",
+  "unity": "2019.2",
+  "version": "2022.0.0",
+  "keywords": [
+    "Editor",
+    "Extension",
+    "Tools"
+  ],
+  "dependencies": {
+    "com.unigame.unicore": "2022.0.0",
+    "com.unity.2d.psdimporter": "6.0.4",
+    "com.unity.addressables": "1.20.0",
+    "com.unigame.neuecc.unirx": "7.1.2",
+    "com.unigame.neuecc.unitask": "2.2.5"
+  }
+}

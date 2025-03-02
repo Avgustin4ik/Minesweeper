@@ -1,0 +1,51 @@
+{
+    "name": "Game.Ecs.ShakeEffect",
+    "rootNamespace": "",
+    "references": [
+        "unigame.unicore.runtime",
+        "Leopotam.EcsLite",
+        "Leopotam.EcsLite.ExtendedSystems",
+        "Leopotam.EcsLite.Threads",
+        "Leopotam.EcsLite.UnityEditor.Runtime",
+        "UniGame.Shared.Runtime",
+        "Game.Ecs.Time",
+        "Game.Ecs.Effects",
+        "UniTask",
+        "UniTask.Addressables",
+        "Game.Ecs.GameLayers",
+        "Game.Ecs.Characteristics",
+        "Game.Ecs.Movement",
+        "Game.Ecs.Ability",
+        "Game.ECS.Effects.Modifitaions",
+        "Game.Service.Ability.Runtime",
+        "Game.Ecs.Characteristics.Base",
+        "Game.Ecs.Characteristic.Block",
+        "Game.Ecs.Characteristic.CriticalChance",
+        "Game.Ecs.Gameplay.Damage",
+        "Game.Ecs.Characteristics.Mana",
+        "Game.Ecs.Characteristics.Health",
+        "Game.Ecs.Camera",
+        "unigame.leoecs.bootstrap.runtime",
+        "unigame.leoecs.converter.runtime",
+        "unigame.laeoecs.shared.runtime",
+        "UniGame.LeoEcs.Shared.Runtime"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [
+        "LEO_ECS_ENABLED",
+        "ENABLE_DOTWEEN"
+    ],
+    "versionDefines": [
+        {
+            "name": "com.leopotam.ecslite",
+            "expression": "2023.0.0",
+            "define": "LEO_ECS_ENABLED"
+        }
+    ],
+    "noEngineReferences": false
+}

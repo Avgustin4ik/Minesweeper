@@ -1,0 +1,97 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ec95e25c4064a589dd56830d6afc782, type: 3}
+  m_Name: Item Map
+  m_EditorClassIdentifier: 
+  value:
+    collection:
+    - name: Clover3Leaf
+      id: 0
+      icon:
+        m_AssetGUID: 7fabe513baaa11b4f9928a5d6d9f70f9
+        m_SubObjectName: Clover3Leaf
+        m_SubObjectGUID: 
+        m_SubObjectType: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        m_EditorAssetChanged: 1
+    - name: CrownChest
+      id: 1
+      icon:
+        m_AssetGUID: 7fabe513baaa11b4f9928a5d6d9f70f9
+        m_SubObjectName: CrownChest
+        m_SubObjectGUID: 
+        m_SubObjectType: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        m_EditorAssetChanged: 1
+    - name: BlueBag
+      id: 2
+      icon:
+        m_AssetGUID: 7fabe513baaa11b4f9928a5d6d9f70f9
+        m_SubObjectName: BlueBag
+        m_SubObjectGUID: 
+        m_SubObjectType: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        m_EditorAssetChanged: 1
+    - name: GiftBoxBlue
+      id: 3
+      icon:
+        m_AssetGUID: 7fabe513baaa11b4f9928a5d6d9f70f9
+        m_SubObjectName: GiftBoxBlue
+        m_SubObjectGUID: 
+        m_SubObjectType: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        m_EditorAssetChanged: 1
+    - name: GoldMedal
+      id: 4
+      icon:
+        m_AssetGUID: 7fabe513baaa11b4f9928a5d6d9f70f9
+        m_SubObjectName: GoldMedal
+        m_SubObjectGUID: 
+        m_SubObjectType: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        m_EditorAssetChanged: 1
+    - name: Heart
+      id: 5
+      icon:
+        m_AssetGUID: 7fabe513baaa11b4f9928a5d6d9f70f9
+        m_SubObjectName: Heart
+        m_SubObjectGUID: 
+        m_SubObjectType: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        m_EditorAssetChanged: 1
+    - name: KeyGold
+      id: 6
+      icon:
+        m_AssetGUID: 7fabe513baaa11b4f9928a5d6d9f70f9
+        m_SubObjectName: KeyGold
+        m_SubObjectGUID: 
+        m_SubObjectType: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        m_EditorAssetChanged: 1
+    - name: PantsIcon
+      id: 7
+      icon:
+        m_AssetGUID: 7fabe513baaa11b4f9928a5d6d9f70f9
+        m_SubObjectName: PantsIcon
+        m_SubObjectGUID: 
+        m_SubObjectType: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        m_EditorAssetChanged: 1
+    - name: PurpleGem
+      id: 8
+      icon:
+        m_AssetGUID: 7fabe513baaa11b4f9928a5d6d9f70f9
+        m_SubObjectName: PurpleGem
+        m_SubObjectGUID: 
+        m_SubObjectType: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        m_EditorAssetChanged: 1

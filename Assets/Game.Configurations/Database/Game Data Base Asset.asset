@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 103bcd08cbae9b54a9710eab3c12031f, type: 3}
+  m_Name: Game Data Base Asset
+  m_EditorClassIdentifier: 
+  gameDatabase:
+    dbData:
+      records: []
+    fallBack:
+    - rid: 2738984659799507036
+    fallBackLocations:
+    - {fileID: 0}
+    categories:
+    - m_AssetGUID: 1e8e8f86176e2d9459f2693bf1533de6
+      m_SubObjectName: 
+      m_SubObjectGUID: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 1
+  references:
+    version: 2
+    RefIds:
+    - rid: 2738984659799507036
+      type: {class: AddressableResourceProvider, ns: Game.Code.DataBase.Runtime, asm: Game.Code.GameDatabase.Runtime}
+      data: 

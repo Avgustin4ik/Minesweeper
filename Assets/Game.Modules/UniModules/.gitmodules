@@ -1,0 +1,33 @@
+[submodule "UniGame.UniBuild"]
+	path = UniGame.UniBuild
+	url = https://github.com/UniGameTeam/UniBuild.git
+	branch = master
+[submodule "UniGame.ViewSystem"]
+	path = UniGame.ViewSystem
+	url = https://github.com/UniGameTeam/UniGame.ViewSystem.git
+	branch = master
+[submodule "UniGame.CoreModules"]
+	path = UniGame.CoreModules
+	url = https://github.com/UniGameTeam/CoreModules.git
+	branch = main
+[submodule "UniGame.UniBuildCommands"]
+	path = UniGame.UniBuildCommands
+url=https://github.com/UnioGame/UnioGame.UniBuildCommands.git
+	branch = master
+[submodule "UniGame.Localization"]
+	path = UniGame.Localization
+url=https://github.com/UnioGame/UniGame.Localization.git
+	branch = main
+[submodule "UniGame.MultiScenes"]
+	path = UniGame.MultiScenes
+	url = https://github.com/UnioGame/MultiScenes.git
+	branch = main
+[submodule "FluentFTP"]
+	path = FluentFTP
+	url = https://github.com/UnioGame/FluentFTP.git
+[submodule "kd.tree"]
+	path = kd.tree
+	url = https://github.com/UnioGame/kd.tree.git
+[submodule "UniGame.GameDB"]
+	path = UniGame.GameDB
+	url = https://github.com/UnioGame/UniGame.GameDB.git

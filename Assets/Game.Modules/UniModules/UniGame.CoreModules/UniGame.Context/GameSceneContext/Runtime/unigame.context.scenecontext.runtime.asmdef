@@ -1,0 +1,20 @@
+{
+    "name": "unigame.context.scenecontext.runtime",
+    "rootNamespace": "",
+    "references": [
+        "unigame.contextdata.runtime",
+        "unigame.serializablecontext.runtime",
+        "unigame.rx.runtime",
+        "unigame.unicore.runtime",
+        "UniRx"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
