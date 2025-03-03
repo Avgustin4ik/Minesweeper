@@ -44,7 +44,7 @@
                     {
                         for (int j = 0; j < size.y; j++)
                         {
-                            ref var fieldCell = ref _world.AddComponent<CellComponent>(_world.NewEntity());
+                            ref var fieldCell = ref _fieldAspect.Cell.Add(_world.NewEntity());
                             fieldCell.position = new Vector2Int(i,j);
                         }
                     }

@@ -21,5 +21,10 @@
         public EcsPool<FieldSizeComponent> FieldSize;
         public EcsPool<GenerateFieldRequest> GenerateFieldRequest;
         public EcsPool<CellComponent> Cell;
+        public EcsPool<MineComponent> Mine;
+        public EcsPool<FlagComponent> Flag;
+        public EcsPool<OpenCellComponent> OpenCell;
+        public EcsPool<OpenCellForceComponent> OpenCellForce;
+        public EcsPool<NeighborMinesComponent> NeighborMines;
     }
 }

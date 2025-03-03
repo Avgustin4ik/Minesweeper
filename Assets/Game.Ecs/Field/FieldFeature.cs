@@ -28,9 +28,7 @@
             ecsSystems.Add(new GenerateFieldSystem());
             ecsSystems.DelHere<GenerateFieldRequest>();
             
-            
             // ecsSystems.Add(new GenerateMinesSystem());
-
         }
     }
 
