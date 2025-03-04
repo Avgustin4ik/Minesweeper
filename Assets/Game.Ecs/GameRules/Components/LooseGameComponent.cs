@@ -1,4 +1,4 @@
-﻿namespace Game.Ecs.Field.Components
+﻿namespace Game.Ecs.GameRules.Components
 {
     using System;
 
@@ -13,7 +13,7 @@
     [Il2CppSetOption(Option.DivideByZeroChecks, false)]
 #endif
     [Serializable]
-    public struct GameLooseStateComponent
+    public struct LooseGameComponent
     {
         
     }

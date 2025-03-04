@@ -21,6 +21,9 @@
             ecsSystems.Add(new OpenCellByForceSystem());
             ecsSystems.Add(new SetFlagOnCellSystem());
             ecsSystems.Add(new DisplayFlagSystem());
+            ecsSystems.Add(new OpenMineCellSystem());
+            ecsSystems.Add(new OpenSaveCellSystem());
+            ecsSystems.Add(new DEBUG_MarkMinesSystem());
         }
     }
 }

@@ -26,5 +26,6 @@
         public EcsPool<OpenCellComponent> OpenCell;
         public EcsPool<OpenCellForceComponent> OpenCellForce;
         public EcsPool<NeighborMinesComponent> NeighborMines;
+        public EcsPool<MineScoredComponent> MineScored;
     }
 }

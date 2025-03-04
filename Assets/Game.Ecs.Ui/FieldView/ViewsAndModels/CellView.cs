@@ -25,21 +25,38 @@
     [Serializable]
     public class CellView : EcsUiView<CellViewModel>
     {
+        public Image bomb;
         public Image flag;
         public ExtendedButton button;
         public TMPro.TextMeshProUGUI text;
         protected override UniTask OnInitialize(CellViewModel model)
         {
             this.Bind(model.DEBUG_position, x => text.text = x.ToString());
+            this.Bind(model.DEBUG_isBomb, x => text.color = x ? Color.red : Color.gray);
             this.Bind(model.flag, SetupFlag);
+            this.Bind(model.detonate, Detonate);
+            this.Bind(model.ShowNeighborMines, x => text.text = x.ToString());
+            this.Bind(model.reset, SetDefaultState);
             
             button.OnLeftClick += OnLeftClickHandle;
             button.OnRightClick += OnRightClickHandle;
             
+            SetDefaultState();
             return base.OnInitialize(model);
         }
-        
-        
+
+        private void SetDefaultState()
+        {
+            flag.enabled = false;
+            bomb.enabled = false;
+            text.text = string.Empty;
+        }
+
+        private void Detonate()
+        {
+            bomb.enabled = true;
+        }
+
 
         private void OnRightClickHandle()
         {
@@ -79,6 +96,10 @@
         public SignalValueProperty<bool> rightClick = new();
         public SignalValueProperty<bool> leftClick = new();
         public ReactiveProperty<Vector2Int> DEBUG_position = new();
+        public ReactiveValue<bool> DEBUG_isBomb = new();
         public ReactiveValue<bool> flag = new();
+        public ReactiveCommand detonate = new();
+        public ReactiveCommand<int> ShowNeighborMines = new();
+        public ReactiveCommand reset = new();
     }
 }

@@ -33,7 +33,7 @@
             _filter = _world.Filter<CellComponent>()
                 .Inc<OpenCellForceComponent>()
                 .Inc<MineComponent>()
-                .Exc<OpenCellComponent>()
+                .Exc<CellIsOpenComponent>()
                 .End();
         }
 
@@ -41,10 +41,9 @@
         {
             foreach (var cellEntity in _filter)
             {
-                    Debug.Log("Game Over");
-                    _aspect.ExplosionEvent.Add(_world.NewEntity());
-                    _cellAspect.IsOpen.Add(cellEntity);
-                    return;
+                Debug.Log("Game Over");
+                _aspect.ExplosionEvent.Add(_world.NewEntity());
+                _cellAspect.IsOpen.Add(cellEntity);
             }
         }
     }

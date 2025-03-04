@@ -44,7 +44,6 @@
 
             _cellFilter = _world.Filter<CellComponent>()
                 .Exc<OpenCellForceComponent>()
-                .Exc<MineComponent>()
                 .End();
             
             _fieldWidth = _fieldService.GetFieldSize().x;
@@ -97,13 +96,11 @@
                     {
                         _cellAspect.Mine.Add(cellEntity);
                         minesPlaced++;
-                        reserved.Add(pos); // Чтобы избежать повторений
+                        reserved.Add(pos);
                     }
                 }
             }
 
-            // Рассчитываем количество соседних мин
-            CalculateNeighborMines();
         }
 
         private int FindEntityByPosition(int x, int y)
@@ -115,37 +112,6 @@
             }
 
             return -1;
-        }
-
-        private void CalculateNeighborMines()
-        {
-            foreach (int entity in _cellFilter)
-            {
-                ref var cell = ref _cellAspect.Cell.Get(entity);
-                int count = 0;
-                for (int dx = -1; dx <= 1; dx++)
-                {
-                    for (int dy = -1; dy <= 1; dy++)
-                    {
-                        int nx = cell.position.x + dx;
-                        int ny = cell.position.y + dy;
-                        if (nx >= 0 && nx < _fieldWidth && ny >= 0 && ny < _fieldHeight)
-                        {
-                            int neighborEntity = FindEntityByPosition(nx, ny);
-                            if (_cellAspect.Mine.Has(neighborEntity))
-                            {
-                                count++;
-                            }
-                        }
-                    }
-                }
-
-                if (count > 0)
-                {
-                    ref var neighborMines = ref _cellAspect.NeighborMines.Add(entity);
-                    neighborMines.count = count;
-                }
-            }
         }
     }
 }

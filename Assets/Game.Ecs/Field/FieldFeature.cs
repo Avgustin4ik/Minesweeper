@@ -1,5 +1,6 @@
 ﻿namespace Game.Ecs.Field
 {
+    using Cell.Components;
     using Cysharp.Threading.Tasks;
     using Game.Ecs.Field.Components;
     using Game.Ecs.Field.Systems;
@@ -27,6 +28,13 @@
             
             ecsSystems.Add(new GenerateFieldSystem());
             ecsSystems.DelHere<GenerateFieldRequest>();
+            ecsSystems.Add(new PlaceMinesSystem());
+            ecsSystems.Add(new DetectFirstClickSystem());
+            ecsSystems.Add(new CalculateNeighborMinesSystem());
+            ecsSystems.Add(new OpenSaveCellSystem());
+            ecsSystems.Add(new OpenMinceCellSystem());
+            
+            ecsSystems.DelHere<OpenCellForceComponent>();
             
             ecsSystems.Add(new PlaceMinesSystem());
         }
