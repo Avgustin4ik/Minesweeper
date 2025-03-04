@@ -2,6 +2,7 @@
 {
     using System;
     using Aspects;
+    using Cell.Aspects;
     using Components;
     using Leopotam.EcsLite;
     using Runtime.Services.FieldService;
@@ -25,7 +26,7 @@
     {
         private EcsWorld _world;
         private EcsFilter _requestFilter;
-        private FieldAspect _fieldAspect;
+        private CellAspect _aspect;
         private IFieldService _fieldService;
 
         public void Init(IEcsSystems systems)
@@ -40,11 +41,11 @@
                 foreach (var request in _requestFilter)
                 {
                     var size = _fieldService.GetFieldSize();
-                    for (int i = 0; i < size.x; i++)
+                    for (var i = 0; i < size.x; i++)
                     {
-                        for (int j = 0; j < size.y; j++)
+                        for (var j = 0; j < size.y; j++)
                         {
-                            ref var fieldCell = ref _fieldAspect.Cell.Add(_world.NewEntity());
+                            ref var fieldCell = ref _aspect.Cell.Add(_world.NewEntity());
                             fieldCell.position = new Vector2Int(i,j);
                         }
                     }

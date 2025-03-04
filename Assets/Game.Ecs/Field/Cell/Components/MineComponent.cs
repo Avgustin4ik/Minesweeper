@@ -1,4 +1,4 @@
-namespace Game.Ecs.Field.Components
+namespace Game.Ecs.Field.Cell.Components
 {
     using System;
 
@@ -13,7 +13,7 @@ namespace Game.Ecs.Field.Components
     [Il2CppSetOption(Option.DivideByZeroChecks, false)]
 #endif
     [Serializable]
-    public struct OpenCellForceComponent
+    public struct MineComponent
     {
     }
 }

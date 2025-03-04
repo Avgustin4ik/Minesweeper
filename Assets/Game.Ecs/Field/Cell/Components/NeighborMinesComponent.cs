@@ -1,4 +1,4 @@
-﻿namespace Game.Ecs.Field.Components
+﻿namespace Game.Ecs.Field.Cell.Components
 {
     using System;
 

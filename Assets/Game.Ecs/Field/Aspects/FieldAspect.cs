@@ -1,6 +1,7 @@
 ﻿namespace Game.Ecs.Field.Aspects
 {
     using System;
+    using Cell.Components;
     using Game.Ecs.Field.Components;
     using Leopotam.EcsLite;
     using UniGame.LeoEcs.Bootstrap.Runtime.Abstract;
@@ -20,11 +21,8 @@
     {
         public EcsPool<FieldSizeComponent> FieldSize;
         public EcsPool<GenerateFieldRequest> GenerateFieldRequest;
-        public EcsPool<CellComponent> Cell;
-        public EcsPool<MineComponent> Mine;
-        public EcsPool<FlagComponent> Flag;
-        public EcsPool<OpenCellComponent> OpenCell;
-        public EcsPool<OpenCellForceComponent> OpenCellForce;
-        public EcsPool<NeighborMinesComponent> NeighborMines;
+        
+        public EcsPool<ExplosionEvent> ExplosionEvent;
+        public EcsPool<PlaceMinesRequest> PlaceMinesRequest;
     }
 }

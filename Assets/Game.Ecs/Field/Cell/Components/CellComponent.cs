@@ -1,6 +1,7 @@
-namespace Game.Ecs.Field.Components
+﻿namespace Game.Ecs.Field.Cell.Components
 {
     using System;
+    using UnityEngine;
 
     /// <summary>
     /// ADD DESCRIPTION HERE
@@ -13,7 +14,8 @@ namespace Game.Ecs.Field.Components
     [Il2CppSetOption(Option.DivideByZeroChecks, false)]
 #endif
     [Serializable]
-    public struct FlagComponent
+    public struct CellComponent
     {
+        public Vector2Int position;
     }
 }

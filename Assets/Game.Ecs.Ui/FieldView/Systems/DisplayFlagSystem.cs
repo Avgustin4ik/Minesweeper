@@ -2,11 +2,8 @@
 {
     using System;
     using System.Linq;
-    using Core.Components;
-    using Field.Aspects;
     using Field.Cell.Aspects;
     using Field.Cell.Components;
-    using Field.Components;
     using Leopotam.EcsLite;
     using UniGame.Core.Runtime.Extension;
     using UniGame.LeoEcs.Bootstrap.Runtime.Attributes;
@@ -29,38 +26,35 @@
 #endif
     [Serializable]
     [ECSDI]
-    public class BindCellToViewSystem : IEcsInitSystem, IEcsRunSystem
+    public class DisplayFlagSystem : IEcsInitSystem, IEcsRunSystem
     {
         private EcsWorld _world;
-        private EcsFilter _viewFilter;
         private EcsFilter _cellFilter;
+        private EcsFilter _viewFilter;
         private CellAspect _cellAspect;
         public void Init(IEcsSystems systems)
         {
             _world = systems.GetWorld();
-            _viewFilter = _world.ViewFilter<CellViewModel>().Exc<OwnerComponent>().End();
             _cellFilter = _world.Filter<CellComponent>().End();
+            _viewFilter = _world.ViewFilter<CellViewModel>().End();
         }
 
         public void Run(IEcsSystems systems)
         {
-            foreach (var viewEntity in _viewFilter)
+            foreach (var view in _viewFilter)
             {
-                var model = _world.GetViewModel<CellViewModel>(viewEntity);
-                
-                foreach (var cellEntity in _cellFilter)
+                foreach (var cell in _cellFilter)
                 {
-                    ref var cell = ref _cellAspect.Cell.Get(cellEntity);
+                    ref var cellComponent = ref _world.GetPool<CellComponent>().Get(cell);
+                    var model = _world.GetViewModel<CellViewModel>(view);
                     
-                    if (cell.position != model.position) continue;
-                    
-                    model.DEBUG_position.Value = cell.position;
-                    
-                    ref var ownerComponent = ref _world.AddComponent<OwnerComponent>(viewEntity);
-                    ownerComponent.Value = cellEntity.PackedEntity(_world);
-                    break;
+                    if (cellComponent.position != model.position) continue;
+                    {
+                        model.flag.Value = _cellAspect.Flag.Has(cell);
+                    }
                 }
             }
+
         }
     }
 }

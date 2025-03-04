@@ -1,4 +1,4 @@
-namespace Game.Ecs.Field.Components
+﻿namespace Game.Ecs.Field.Components
 {
     using System;
 
@@ -13,7 +13,8 @@ namespace Game.Ecs.Field.Components
     [Il2CppSetOption(Option.DivideByZeroChecks, false)]
 #endif
     [Serializable]
-    public struct MineComponent
+    public struct ExplosionEvent
     {
+        
     }
 }

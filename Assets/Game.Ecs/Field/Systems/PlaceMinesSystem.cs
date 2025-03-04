@@ -3,7 +3,8 @@
     using System;
     using System.Collections.Generic;
     using Aspects;
-    using Components;
+    using Cell.Aspects;
+    using Cell.Components;
     using Leopotam.EcsLite;
     using Runtime.Services.FieldService;
     using UniGame.LeoEcs.Bootstrap.Runtime.Attributes;
@@ -24,20 +25,21 @@
         IEcsRunSystem
     {
         private EcsWorld _world;
-        private EcsFilter _clickedCellFilter;
         private EcsFilter _cellFilter;
         private IFieldService _fieldService;
         private FieldAspect _fieldAspect;
+        private CellAspect _cellAspect;
         private int _fieldWidth;
         private int _fieldHeight;
         private int _mineCount;
-        
+        private EcsFilter _placeRequestFilter;
+
 
         public void Init(IEcsSystems systems)
         {
             _world = systems.GetWorld();
-            _clickedCellFilter = _world.Filter<OpenCellForceComponent>()
-                .Inc<CellComponent>()
+            
+            _placeRequestFilter = _world.Filter<PlaceMinesRequest>()
                 .End();
 
             _cellFilter = _world.Filter<CellComponent>()
@@ -52,12 +54,12 @@
 
         public void Run(IEcsSystems systems)
         {
-            foreach (int entity in _clickedCellFilter)
+            foreach (var entity in _placeRequestFilter)
             {
-                ref var cell = ref _world.GetPool<CellComponent>().Get(entity);
-                PlaceMines(cell.position.x, cell.position.y);
-                _world.GetPool<OpenCellForceComponent>().Del(entity); // Удаляем событие после обработки
-                break; // Обрабатываем только один клик
+                ref var cell = ref _world.GetPool<PlaceMinesRequest>().Get(entity);
+                PlaceMines(cell.savePosition.x, cell.savePosition.y);
+                _fieldAspect.PlaceMinesRequest.Del(entity);
+                break;
             }
         }
 
@@ -91,9 +93,9 @@
                 if (!reserved.Contains(pos))
                 {
                     int cellEntity = FindEntityByPosition(x, y);
-                    if (!_fieldAspect.Mine.Has(cellEntity))
+                    if (!_cellAspect.Mine.Has(cellEntity))
                     {
-                        _fieldAspect.Mine.Add(cellEntity);
+                        _cellAspect.Mine.Add(cellEntity);
                         minesPlaced++;
                         reserved.Add(pos); // Чтобы избежать повторений
                     }
@@ -108,7 +110,7 @@
         {
             foreach (int entity in _cellFilter)
             {
-                ref var cell = ref _fieldAspect.Cell.Get(entity);
+                ref var cell = ref _cellAspect.Cell.Get(entity);
                 if (cell.position.x == x && cell.position.y == y) return entity;
             }
 
@@ -119,7 +121,7 @@
         {
             foreach (int entity in _cellFilter)
             {
-                ref var cell = ref _fieldAspect.Cell.Get(entity);
+                ref var cell = ref _cellAspect.Cell.Get(entity);
                 int count = 0;
                 for (int dx = -1; dx <= 1; dx++)
                 {
@@ -130,7 +132,7 @@
                         if (nx >= 0 && nx < _fieldWidth && ny >= 0 && ny < _fieldHeight)
                         {
                             int neighborEntity = FindEntityByPosition(nx, ny);
-                            if (_fieldAspect.Mine.Has(neighborEntity))
+                            if (_cellAspect.Mine.Has(neighborEntity))
                             {
                                 count++;
                             }
@@ -140,7 +142,7 @@
 
                 if (count > 0)
                 {
-                    ref var neighborMines = ref _fieldAspect.NeighborMines.Add(entity);
+                    ref var neighborMines = ref _cellAspect.NeighborMines.Add(entity);
                     neighborMines.count = count;
                 }
             }

@@ -18,6 +18,9 @@
         {
             ecsSystems.Add(new CreateFieldViewSystem());
             ecsSystems.Add(new BindCellToViewSystem());
+            ecsSystems.Add(new OpenCellByForceSystem());
+            ecsSystems.Add(new SetFlagOnCellSystem());
+            ecsSystems.Add(new DisplayFlagSystem());
         }
     }
 }

@@ -1,7 +1,6 @@
-﻿namespace Game.Ecs.Field.Components
+﻿namespace Game.Ecs.Field.Cell.Components
 {
     using System;
-    using UnityEngine;
 
     /// <summary>
     /// ADD DESCRIPTION HERE
@@ -14,7 +13,8 @@
     [Il2CppSetOption(Option.DivideByZeroChecks, false)]
 #endif
     [Serializable]
-    public struct GenerateFieldRequest
+    public struct CellIsOpenComponent
     {
+        
     }
 }
