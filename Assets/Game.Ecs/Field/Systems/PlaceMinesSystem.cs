@@ -2,12 +2,16 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Linq;
     using Aspects;
     using Cell.Aspects;
     using Cell.Components;
+    using Cysharp.Threading.Tasks;
     using Leopotam.EcsLite;
     using Runtime.Services.FieldService;
+    using UniGame.Core.Runtime.Extension;
     using UniGame.LeoEcs.Bootstrap.Runtime.Attributes;
+    using UnityEngine;
 
     /// <summary>
     /// ADD DESCRIPTION HERE
@@ -26,29 +30,26 @@
     {
         private EcsWorld _world;
         private EcsFilter _cellFilter;
-        private IFieldService _fieldService;
+        private IGameSettingsService _gameSettingsService;
         private FieldAspect _fieldAspect;
         private CellAspect _cellAspect;
-        private int _fieldWidth;
-        private int _fieldHeight;
         private int _mineCount;
+        private Vector2Int _size;
         private EcsFilter _placeRequestFilter;
 
 
         public void Init(IEcsSystems systems)
         {
             _world = systems.GetWorld();
-            
+
             _placeRequestFilter = _world.Filter<PlaceMinesRequest>()
                 .End();
 
             _cellFilter = _world.Filter<CellComponent>()
-                .Exc<OpenCellForceComponent>()
+                .Exc<OpenCellByClickSelfEvent>()
                 .End();
-            
-            _fieldWidth = _fieldService.GetFieldSize().x;
-            _fieldHeight = _fieldService.GetFieldSize().y;
-            _mineCount = _fieldService.MinesCount;
+            _size = _gameSettingsService.GetFieldSize;
+            _mineCount = _gameSettingsService.MinesCount;
         }
 
         public void Run(IEcsSystems systems)
@@ -56,62 +57,59 @@
             foreach (var entity in _placeRequestFilter)
             {
                 ref var cell = ref _world.GetPool<PlaceMinesRequest>().Get(entity);
-                PlaceMines(cell.savePosition.x, cell.savePosition.y);
+                PlaceMines(cell.savePosition.x, cell.savePosition.y).Forget();
                 _fieldAspect.PlaceMinesRequest.Del(entity);
                 break;
             }
         }
+        
+        
 
-        private void PlaceMines(int clickedX, int clickedY)
+        private UniTaskVoid PlaceMines(int clickedX, int clickedY)
         {
-            var reserved = new HashSet<(int, int)>();
-
-            // Резервируем кликнутую ячейку и её соседей
-            reserved.Add((clickedX, clickedY));
-            for (int dx = -1; dx <= 1; dx++)
+            var reserved = new List<(int, int)>(9){ (clickedX, clickedY) };
+            for (var dx = -1; dx <= 1; dx++)
             {
-                for (int dy = -1; dy <= 1; dy++)
+                for (var dy = -1; dy <= 1; dy++)
                 {
-                    int nx = clickedX + dx;
-                    int ny = clickedY + dy;
-                    if (nx >= 0 && nx < _fieldWidth && ny >= 0 && ny < _fieldHeight)
+                    var nx = clickedX + dx;
+                    var ny = clickedY + dy;
+                    if (nx >= 0 && nx < _size.x && ny >= 0 && ny < _size.y)
                     {
                         reserved.Add((nx, ny));
                     }
                 }
             }
-
-            // Размещаем мины
-            int minesPlaced = 0;
-            var random = new System.Random();
+            
+            var minesPlaced = 0;
+            var span = new Span<int>(new int[_size.x * _size.y]);
+            for (int i = 0; i < span.Length; i++)
+            {
+                span[i] = i;
+            }
+            span.Shuffle();
+            
+            var index = 0;
             while (minesPlaced < _mineCount)
             {
-                int x = random.Next(0, _fieldWidth);
-                int y = random.Next(0, _fieldHeight);
+                var x = span[index] % _size.x;
+                var y = span[index] / _size.x;
+                index++;
                 var pos = (x, y);
-                if (!reserved.Contains(pos))
+                if(reserved.Contains(pos)) continue;
+
+                foreach (var cell in _cellFilter)
                 {
-                    int cellEntity = FindEntityByPosition(x, y);
-                    if (!_cellAspect.Mine.Has(cellEntity))
+                    ref var cellComponent = ref _cellAspect.Cell.Get(cell);
+                    
+                    if (cellComponent.position.x == x && cellComponent.position.y == y)
                     {
-                        _cellAspect.Mine.Add(cellEntity);
+                        _cellAspect.Mine.Add(cell);
                         minesPlaced++;
-                        reserved.Add(pos);
                     }
                 }
             }
-
-        }
-
-        private int FindEntityByPosition(int x, int y)
-        {
-            foreach (int entity in _cellFilter)
-            {
-                ref var cell = ref _cellAspect.Cell.Get(entity);
-                if (cell.position.x == x && cell.position.y == y) return entity;
-            }
-
-            return -1;
+            return default;
         }
     }
 }
