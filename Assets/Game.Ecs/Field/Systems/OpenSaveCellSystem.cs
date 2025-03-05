@@ -27,23 +27,45 @@
     public class OpenSaveCellSystem : IEcsInitSystem, IEcsRunSystem
     {
         private EcsWorld _world;
-        private EcsFilter _filter;
+        private EcsFilter _cellToOpenFilter;
         private CellAspect _cellAspect;
+        private EcsFilter _cellFilter;
+
         public void Init(IEcsSystems systems)
         {
             _world = systems.GetWorld();
-            _filter = _world.Filter<CellComponent>()
-                .Inc<OpenCellComponent>()
-                .Exc<CellIsOpenComponent>()
+            _cellToOpenFilter = _world.Filter<CellComponent>()
+                .Inc<NeighborMinesComponent>()
+                .Inc<CellIsOpenComponent>()
                 .Exc<MineComponent>()
+                .End();
+
+            _cellFilter = _world.Filter<CellComponent>()
+                .Exc<CellIsOpenComponent>()
                 .End();
         }
 
         public void Run(IEcsSystems systems)
         {
-            foreach (var cell in _filter)
+            foreach (var cellToOpen in _cellToOpenFilter)
             {
-                _cellAspect.IsOpen.Add(cell);
+                ref var neighborMinesComponent = ref _cellAspect.NeighborMines.Get(cellToOpen);
+                if (neighborMinesComponent.count > 0) continue;
+                
+                foreach (var cell in _cellFilter)
+                {
+                    ref var cellComponent = ref _cellAspect.Cell.Get(cell);
+                    ref var cellToOpenComponent = ref _cellAspect.Cell.Get(cellToOpen);
+                    for (int i = -1; i <= 1; i++)
+                    {
+                        for (int j = -1; j <= 1; j++)
+                        {
+                            if(cellComponent.position.x == cellToOpenComponent.position.x + i &&
+                               cellComponent.position.y == cellToOpenComponent.position.y + j)
+                                _cellAspect.IsOpen.Add(cell);
+                        }
+                    }
+                }
             }
         }
     }

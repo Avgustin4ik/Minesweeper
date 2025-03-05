@@ -24,6 +24,7 @@
             ecsSystems.Add(new OpenMineCellSystem());
             ecsSystems.Add(new OpenSaveCellSystem());
             ecsSystems.Add(new DEBUG_MarkMinesSystem());
+            ecsSystems.Add(new DEBUG_MarkNeighborsSystem());
         }
     }
 }

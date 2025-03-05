@@ -2,12 +2,8 @@
 {
     using System;
     using System.Linq;
-    using Field.Cell.Aspects;
     using Field.Cell.Components;
-    using Field.Components;
-    using GameRules.Components;
     using Leopotam.EcsLite;
-    using UniCore.Runtime.ProfilerTools;
     using UniGame.Core.Runtime.Extension;
     using UniGame.LeoEcs.Bootstrap.Runtime.Attributes;
     using UniGame.LeoEcs.Shared.Extensions;
@@ -29,46 +25,35 @@
 #endif
     [Serializable]
     [ECSDI]
-    public class OpenCellByForceSystem : IEcsInitSystem, IEcsRunSystem
+    public class DEBUG_MarkNeighborsSystem : IEcsInitSystem, IEcsRunSystem
     {
         private EcsWorld _world;
-        private EcsFilter _viewFilter;
         private EcsFilter _cellFilter;
-        private CellAspect _cellAspect;
-        private EcsFilter _looseFilter;
-        private EcsFilter _winFilter;
+        private EcsFilter _viewFilter;
 
         public void Init(IEcsSystems systems)
         {
             _world = systems.GetWorld();
-            _viewFilter = _world.ViewFilter<CellViewModel>()
-                .End();
-            _cellFilter = _world.Filter<CellComponent>()
-                .Exc<OpenCellForceComponent>()
-                .Exc<CellIsOpenComponent>()
-                .End();
-
-            _looseFilter = _world.Filter<LooseGameComponent>()
-                .End();
-            _winFilter = _world.Filter<WinGameComponent>()
-                .End();
+            _viewFilter = _world.ViewFilter<CellViewModel>().End();
+            _cellFilter = _world.Filter<CellComponent>().Inc<NeighborMinesComponent>().End();
         }
 
         public void Run(IEcsSystems systems)
         {
-            if (_looseFilter.Has() || _winFilter.Has()) return;
-            
             foreach (var view in _viewFilter)
             {
-                var model = _world.GetViewModel<CellViewModel>(view);
-                if(!model.leftClick.Take()) continue;
+                var cellViewModel = _world.GetViewModel<CellViewModel>(view);
                 foreach (var cell in _cellFilter)
                 {
                     ref var cellComponent = ref _world.GetPool<CellComponent>().Get(cell);
                     
-                    if (cellComponent.position != model.position) continue;
-                    _cellAspect.OpenCellForce.Add(cell);
-                    break;
+                    if (cellComponent.position.x == cellViewModel.position.x &&
+                        cellComponent.position.y == cellViewModel.position.y)
+                    {
+                        ref var neighborMinesComponent = ref _world.GetPool<NeighborMinesComponent>().Get(cell);
+                        cellViewModel.DEBUG_neighborMines.Value = neighborMinesComponent.count;
+                    }
+                    
                 }
             }
         }

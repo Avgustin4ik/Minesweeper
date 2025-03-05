@@ -5,6 +5,7 @@
     using Field.Cell.Aspects;
     using Field.Cell.Components;
     using Leopotam.EcsLite;
+    using UniCore.Runtime.ProfilerTools;
     using UniGame.Core.Runtime.Extension;
     using UniGame.LeoEcs.Bootstrap.Runtime.Attributes;
     using UniGame.LeoEcs.Shared.Extensions;
@@ -31,6 +32,7 @@
         private EcsWorld _world;
         private EcsFilter _filter;
         private CellAspect _cellAspect;
+        private EcsFilter _viewFilter;
 
         public void Init(IEcsSystems systems)
         {
@@ -40,16 +42,28 @@
                 .Inc<CellIsOpenComponent>()
                 .Exc<MineComponent>()
                 .End();
+            
+            _viewFilter = _world.ViewFilter<CellViewModel>().End();
         }
 
         public void Run(IEcsSystems systems)
         {
             foreach (var cell in _filter)
             {
-                if (!_world.TryGetViewModel<CellViewModel>(cell, out var model)) continue;
+                ref var cellComponent = ref _cellAspect.Cell.Get(cell);
+                foreach (var view in _viewFilter)
+                {
+                    var model = _world.GetViewModel<CellViewModel>(view); 
+                    if(model.isOpen.Value) continue;
+                    
+                    if(cellComponent.position != model.position) continue;
+                    
+                    ref var neighborMines = ref _cellAspect.NeighborMines.Get(cell);
+                    GameLog.Log($"OpenSaveCellSystem + {neighborMines.count}");
+                    model.ShowNeighborMines.Execute(neighborMines.count);
+                    model.isOpen.Value = true;
+                }
                 
-                ref var neighborMines = ref _cellAspect.NeighborMines.Get(cell);
-                model.ShowNeighborMines.Execute(neighborMines.count);
             }
         }
     }

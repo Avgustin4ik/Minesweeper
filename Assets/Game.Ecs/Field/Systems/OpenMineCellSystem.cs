@@ -21,7 +21,7 @@
 #endif
     [Serializable]
     [ECSDI]
-    public class OpenMinceCellSystem : IEcsInitSystem, IEcsRunSystem
+    public class OpenMineCellSystem : IEcsInitSystem, IEcsRunSystem
     {
         private EcsWorld _world;
         private EcsFilter _filter;
@@ -31,9 +31,8 @@
         {
             _world = systems.GetWorld();
             _filter = _world.Filter<CellComponent>()
-                .Inc<OpenCellForceComponent>()
+                .Inc<CellIsOpenComponent>()
                 .Inc<MineComponent>()
-                .Exc<CellIsOpenComponent>()
                 .End();
         }
 
@@ -43,7 +42,6 @@
             {
                 Debug.Log("Game Over");
                 _aspect.ExplosionEvent.Add(_world.NewEntity());
-                _cellAspect.IsOpen.Add(cellEntity);
             }
         }
     }

@@ -9,6 +9,7 @@
     using UniModules.UniGame.Core.Runtime.Rx;
     using UniRx;
     using UnityEngine;
+    using UnityEngine.Localization;
     using UnityEngine.UI;
 
 #if ENABLE_IL2CPP
@@ -25,19 +26,23 @@
     [Serializable]
     public class CellView : EcsUiView<CellViewModel>
     {
+        public Color closedCell;
+        public Color openCell;
         public Image bomb;
         public Image flag;
         public ExtendedButton button;
         public TMPro.TextMeshProUGUI text;
         protected override UniTask OnInitialize(CellViewModel model)
         {
-            this.Bind(model.DEBUG_position, x => text.text = x.ToString());
+            // this.Bind(model.DEBUG_position, x => text.text = x.ToString());
             this.Bind(model.DEBUG_isBomb, x => text.color = x ? Color.red : Color.gray);
             this.Bind(model.flag, SetupFlag);
             this.Bind(model.detonate, Detonate);
-            this.Bind(model.ShowNeighborMines, x => text.text = x.ToString());
+            this.Bind(model.ShowNeighborMines, OpenCell);
             this.Bind(model.reset, SetDefaultState);
-            
+            this.Bind(model.DEBUG_neighborMines, x => text.text = x.ToString());
+            this.Bind(model.isOpen, x => button.interactable = !x);
+
             button.OnLeftClick += OnLeftClickHandle;
             button.OnRightClick += OnRightClickHandle;
             
@@ -45,10 +50,17 @@
             return base.OnInitialize(model);
         }
 
+        private void OpenCell()
+        {
+            text.color = Color.black;
+            text.text = Model.DEBUG_neighborMines.Value.ToString(); 
+        }
+
         private void SetDefaultState()
         {
             flag.enabled = false;
             bomb.enabled = false;
+            Model.isOpen.Value = false;
             text.text = string.Empty;
         }
 
@@ -100,6 +112,8 @@
         public ReactiveValue<bool> flag = new();
         public ReactiveCommand detonate = new();
         public ReactiveCommand<int> ShowNeighborMines = new();
+        public ReactiveValue<bool> isOpen = new();
         public ReactiveCommand reset = new();
+        public ReactiveValue<int> DEBUG_neighborMines = new();
     }
 }

@@ -32,8 +32,8 @@
             ecsSystems.Add(new DetectFirstClickSystem());
             ecsSystems.Add(new CalculateNeighborMinesSystem());
             ecsSystems.Add(new OpenSaveCellSystem());
-            ecsSystems.Add(new OpenMinceCellSystem());
-            
+            ecsSystems.Add(new OpenMineCellSystem());
+            ecsSystems.Add(new OpenCellSystem());
             ecsSystems.DelHere<OpenCellForceComponent>();
             
             ecsSystems.Add(new PlaceMinesSystem());
