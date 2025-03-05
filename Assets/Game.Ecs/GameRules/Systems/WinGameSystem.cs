@@ -32,7 +32,7 @@
         private EcsWorld _world;
         private EcsFilter _minesWithFlag;
         private EcsFilter _mines;
-        private IFieldService _service;
+        private IGameSettingsService _service;
         private EcsFilter _winEventFilter;
         private GameRulesAspect _gameRulesAspect;
         private EcsFilter _cellsFilter;

@@ -28,7 +28,7 @@
         public void Init(IEcsSystems systems)
         {
             _world = systems.GetWorld();
-            _clickedCellFilter = _world.Filter<OpenCellForceComponent>()
+            _clickedCellFilter = _world.Filter<OpenCellByClickSelfEvent>()
                 .Inc<CellComponent>()
                 .End();
             _minedCellsFilter = _world.Filter<CellComponent>()

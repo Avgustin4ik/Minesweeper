@@ -2,27 +2,30 @@
 {
     using System;
     using UniGame.UniNodes.GameFlow.Runtime;
-    using Unity.Mathematics;
     using UnityEngine;
 
     [Serializable]
-    public class FieldService : GameService, IFieldService
+    public class GameSettingsService : GameService, IGameSettingsService
     {
         private readonly FieldSettings _settings;
-        private int2 _fieldSize;
+        private Vector2Int _fieldSize;
         private readonly GameSettings _gameSettings;
         private readonly FieldSettings _fieldSettings;
 
-        public FieldService(FieldSettings settings, GameSettings gameSettings)
+        public GameSettingsService(FieldSettings settings, GameSettings gameSettings)
         {
             _settings = settings;
             _fieldSettings = settings;
             _gameSettings = gameSettings;
-            _fieldSize = new int2(_settings.width, _settings.height);
+            _fieldSize = new Vector2Int(_settings.width, _settings.height);
         }
 
-        public int2 GetFieldSize() => _fieldSize;
+        public Vector2Int GetFieldSize => _fieldSize;
         public KeyCode RestartKey => _gameSettings.restartKey;
-        public int MinesCount => _fieldSettings.minesCount;
+
+        public int MinesCount =>
+            _fieldSettings.setMinesManually
+                ? _fieldSettings.minesCount
+                : _fieldSize.x * _fieldSize.y / 5;
     }
 }

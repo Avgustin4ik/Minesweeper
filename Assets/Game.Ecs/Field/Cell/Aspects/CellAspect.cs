@@ -23,7 +23,7 @@
         public EcsPool<CellComponent> Cell;
         public EcsPool<MineComponent> Mine;
         public EcsPool<FlagComponent> Flag;
-        public EcsPool<OpenCellForceComponent> OpenCellForce;
+        public EcsPool<OpenCellByClickSelfEvent> OpenCellForce;
         public EcsPool<NeighborMinesComponent> NeighborMines;
         public EcsPool<MineScoredComponent> MineScored;
     }

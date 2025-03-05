@@ -33,7 +33,7 @@
         public void Init(IEcsSystems systems)
         {
             _world = systems.GetWorld();
-            _filter = _world.Filter<OpenCellForceComponent>().Exc<CellIsOpenComponent>().End();
+            _filter = _world.Filter<OpenCellByClickSelfEvent>().Exc<CellIsOpenComponent>().End();
         }
 
         public void Run(IEcsSystems systems)

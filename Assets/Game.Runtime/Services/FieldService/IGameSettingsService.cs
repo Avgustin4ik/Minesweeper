@@ -4,10 +4,9 @@ namespace Game.Runtime.Services.FieldService
     using Unity.Mathematics;
     using UnityEngine;
 
-    public interface IFieldService : IGameService
+    public interface IGameSettingsService : IGameService
     {
-        public int2 GetFieldSize();
-
+        public Vector2Int GetFieldSize {get;}
         KeyCode RestartKey { get;}
         int MinesCount { get; }
     }

@@ -44,7 +44,7 @@
             _viewFilter = _world.ViewFilter<CellViewModel>()
                 .End();
             _cellFilter = _world.Filter<CellComponent>()
-                .Exc<OpenCellForceComponent>()
+                .Exc<OpenCellByClickSelfEvent>()
                 .Exc<CellIsOpenComponent>()
                 .End();
 

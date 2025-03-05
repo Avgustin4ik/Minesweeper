@@ -22,7 +22,7 @@
         public override async UniTask InitializeFeatureAsync(IEcsSystems ecsSystems)
         {
             var context = ecsSystems.GetShared<IContext>();
-            var service = await context.ReceiveFirstAsync<IFieldService>();
+            var service = await context.ReceiveFirstAsync<IGameSettingsService>();
             var world = ecsSystems.GetWorld();
             world.SetGlobal(service);
             
@@ -31,11 +31,12 @@
             ecsSystems.Add(new PlaceMinesSystem());
             ecsSystems.Add(new DetectFirstClickSystem());
             ecsSystems.Add(new CalculateNeighborMinesSystem());
+            
             ecsSystems.Add(new OpenSaveCellSystem());
             ecsSystems.DelHere<ExplosionEvent>();
             ecsSystems.Add(new OpenMineCellSystem());
             ecsSystems.Add(new OpenCellSystem());
-            ecsSystems.DelHere<OpenCellForceComponent>();
+            ecsSystems.DelHere<OpenCellByClickSelfEvent>();
             ecsSystems.Add(new PlaceMinesSystem());
             
 

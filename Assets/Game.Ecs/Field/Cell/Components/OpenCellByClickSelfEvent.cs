@@ -13,7 +13,7 @@ namespace Game.Ecs.Field.Cell.Components
     [Il2CppSetOption(Option.DivideByZeroChecks, false)]
 #endif
     [Serializable]
-    public struct OpenCellForceComponent
+    public struct OpenCellByClickSelfEvent
     {
     }
 }

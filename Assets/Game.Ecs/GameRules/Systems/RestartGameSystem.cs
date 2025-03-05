@@ -33,7 +33,7 @@
         private EcsWorld _world;
         private EcsFilter _eventFilter;
         private EcsFilter _cellFilter;
-        private IFieldService _gameSettings;
+        private IGameSettingsService _gameSettings;
         private GameRulesAspect _gameRulesAspect;
         private CellAspect _cellAspect;
         private EcsFilter _requestFilter;

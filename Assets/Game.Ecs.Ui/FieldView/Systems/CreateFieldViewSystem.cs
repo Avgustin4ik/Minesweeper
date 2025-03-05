@@ -31,7 +31,7 @@
     {
         private EcsWorld _world;
         private EcsFilter _viewFilter;
-        private IFieldService _fieldService;
+        private IGameSettingsService _gameSettingsService;
         private EcsFilter _requestFilter;
 
         public void Init(IEcsSystems systems)
@@ -49,7 +49,7 @@
                 foreach (var fieldView in _viewFilter)
                 {
                     var model = _world.GetViewModel<FieldViewModel>(fieldView);
-                    var size = _fieldService.GetFieldSize();
+                    var size = _gameSettingsService.GetFieldSize;
                     model.GenerateField.Execute(new Vector2Int(size.x, size.y));
                     
                     _world.RemoveComponent<GenerateCellsViewsRequest>(requestEntity);

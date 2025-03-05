@@ -27,7 +27,7 @@
         private EcsWorld _world;
         private EcsFilter _requestFilter;
         private CellAspect _aspect;
-        private IFieldService _fieldService;
+        private IGameSettingsService _gameSettingsService;
 
         public void Init(IEcsSystems systems)
         {
@@ -40,7 +40,7 @@
             {
                 foreach (var request in _requestFilter)
                 {
-                    var size = _fieldService.GetFieldSize();
+                    var size = _gameSettingsService.GetFieldSize;
                     for (var i = 0; i < size.x; i++)
                     {
                         for (var j = 0; j < size.y; j++)
