@@ -17,8 +17,8 @@
         {
             ecsSystems.Add(new InitGameSystem());
             ecsSystems.Add(new LooseGameSystem());
+            ecsSystems.Add(new RestartGameSystem());
+            ecsSystems.Add(new WinGameSystem());
         }
-
-        
     }
 }

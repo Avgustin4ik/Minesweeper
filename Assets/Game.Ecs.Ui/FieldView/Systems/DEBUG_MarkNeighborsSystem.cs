@@ -51,7 +51,7 @@
                         cellComponent.position.y == cellViewModel.position.y)
                     {
                         ref var neighborMinesComponent = ref _world.GetPool<NeighborMinesComponent>().Get(cell);
-                        cellViewModel.DEBUG_neighborMines.Value = neighborMinesComponent.count;
+                        cellViewModel.neighborMines.Value = neighborMinesComponent.count;
                     }
                     
                 }

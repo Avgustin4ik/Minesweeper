@@ -12,9 +12,10 @@ namespace Game.Runtime.Services.FieldService
     public class FieldServiceSource : DataSourceAsset<IFieldService>
     {
         public FieldSettings settings;
+        public GameSettings gameSettings;
         protected override async UniTask<IFieldService> CreateInternalAsync(IContext context)
         {
-            return new FieldService(settings);
+            return new FieldService(settings, gameSettings);
         }
     }
 }

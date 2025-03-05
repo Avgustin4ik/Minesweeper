@@ -48,7 +48,7 @@
             
             _fieldWidth = _fieldService.GetFieldSize().x;
             _fieldHeight = _fieldService.GetFieldSize().y;
-            _mineCount = _fieldWidth * _fieldHeight / 10;
+            _mineCount = _fieldService.MinesCount;
         }
 
         public void Run(IEcsSystems systems)

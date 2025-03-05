@@ -40,7 +40,7 @@
             this.Bind(model.detonate, Detonate);
             this.Bind(model.ShowNeighborMines, OpenCell);
             this.Bind(model.reset, SetDefaultState);
-            this.Bind(model.DEBUG_neighborMines, x => text.text = x.ToString());
+            this.Bind(model.neighborMines, x => text.text = x.ToString());
             this.Bind(model.isOpen, x => button.interactable = !x);
 
             button.OnLeftClick += OnLeftClickHandle;
@@ -53,7 +53,7 @@
         private void OpenCell()
         {
             text.color = Color.black;
-            text.text = Model.DEBUG_neighborMines.Value.ToString(); 
+            text.text = Model.neighborMines.Value.ToString(); 
         }
 
         private void SetDefaultState()
@@ -114,6 +114,6 @@
         public ReactiveCommand<int> ShowNeighborMines = new();
         public ReactiveValue<bool> isOpen = new();
         public ReactiveCommand reset = new();
-        public ReactiveValue<int> DEBUG_neighborMines = new();
+        public ReactiveValue<int> neighborMines = new();
     }
 }

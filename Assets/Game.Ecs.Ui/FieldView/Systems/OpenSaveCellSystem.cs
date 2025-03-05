@@ -61,6 +61,7 @@
                     ref var neighborMines = ref _cellAspect.NeighborMines.Get(cell);
                     GameLog.Log($"OpenSaveCellSystem + {neighborMines.count}");
                     model.ShowNeighborMines.Execute(neighborMines.count);
+                    model.neighborMines.Value = neighborMines.count;
                     model.isOpen.Value = true;
                 }
                 
