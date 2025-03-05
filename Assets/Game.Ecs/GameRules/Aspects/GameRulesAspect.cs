@@ -23,5 +23,6 @@
         public EcsPool<WinGameComponent> WinGame;
         public EcsPool<ExplosionEvent> ExplosionEvent;
         public EcsPool<RestartGameEvent> RestartGameEvent;
+        public EcsPool<RequestToRestartGame> RequestToRestartGame;
     }
 }

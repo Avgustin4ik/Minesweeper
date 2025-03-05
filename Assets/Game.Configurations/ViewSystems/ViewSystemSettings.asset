@@ -42,7 +42,31 @@ MonoBehaviour:
         Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
     PoolingPreloadCount: 1
     Atlases: []
-    Hash: 1838934702
+    Hash: 1103580191
+  - AssetGUID: 30e37dd6c018d4f479df0c21782c9132
+    View:
+      m_AssetGUID: 30e37dd6c018d4f479df0c21782c9132
+      m_SubObjectName: 
+      m_SubObjectGUID: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    ViewName: Loose Screen
+    Tag: 
+    Type:
+      name: LooseScreenView
+      fullTypeName: NAMESPACE.ViewsAndModels.LooseScreenView, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    ModelType:
+      name: LooseScreenViewModel
+      fullTypeName: NAMESPACE.ViewsAndModels.LooseScreenViewModel, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    ViewModelType:
+      name: LooseScreenViewModel
+      fullTypeName: NAMESPACE.ViewsAndModels.LooseScreenViewModel, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    PoolingPreloadCount: 1
+    Atlases: []
+    Hash: 80524418
   - AssetGUID: 255a96aa8fad79348b8ae5159f4f5d57
     View:
       m_AssetGUID: 255a96aa8fad79348b8ae5159f4f5d57
@@ -66,7 +90,55 @@ MonoBehaviour:
         Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
     PoolingPreloadCount: 1
     Atlases: []
-    Hash: 1925726292
+    Hash: 1498011002
+  - AssetGUID: 32d064cd745ab594cb2f1c2ac05d4db3
+    View:
+      m_AssetGUID: 32d064cd745ab594cb2f1c2ac05d4db3
+      m_SubObjectName: 
+      m_SubObjectGUID: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    ViewName: RestartButtonView
+    Tag: 
+    Type:
+      name: RestartButtonView
+      fullTypeName: NAMESPACE.ViewsAndModels.RestartButtonView, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    ModelType:
+      name: RestartButtonViewModel
+      fullTypeName: NAMESPACE.ViewsAndModels.RestartButtonViewModel, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    ViewModelType:
+      name: RestartButtonViewModel
+      fullTypeName: NAMESPACE.ViewsAndModels.RestartButtonViewModel, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    PoolingPreloadCount: 1
+    Atlases: []
+    Hash: -1829621864
+  - AssetGUID: 30a3f097080eb1243813b77919d5c2df
+    View:
+      m_AssetGUID: 30a3f097080eb1243813b77919d5c2df
+      m_SubObjectName: 
+      m_SubObjectGUID: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    ViewName: 'Win Screen '
+    Tag: 
+    Type:
+      name: WinScreenView
+      fullTypeName: NAMESPACE.ViewsAndModels.WinScreenView, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    ModelType:
+      name: WinScrennViewModel
+      fullTypeName: NAMESPACE.ViewsAndModels.WinScrennViewModel, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    ViewModelType:
+      name: WinScrennViewModel
+      fullTypeName: NAMESPACE.ViewsAndModels.WinScrennViewModel, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    PoolingPreloadCount: 1
+    Atlases: []
+    Hash: -1809384618
   applyAddressablesGroup: 0
   labels: []
   addressableGroupName: 

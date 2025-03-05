@@ -25,6 +25,21 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 30a3f097080eb1243813b77919d5c2df
+    m_Address: Assets/Game.Content/UI/Win Screen .prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 30e37dd6c018d4f479df0c21782c9132
+    m_Address: Assets/Game.Content/UI/Loose Screen.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 32d064cd745ab594cb2f1c2ac05d4db3
+    m_Address: Assets/Game.Content/UI/RestartButtonView.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: a0105bd277f7a8347a016ec0c39d3030
     m_Address: Assets/Game.Content/UI
     m_ReadOnly: 0

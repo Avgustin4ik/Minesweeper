@@ -36,20 +36,32 @@
         private IFieldService _gameSettings;
         private GameRulesAspect _gameRulesAspect;
         private CellAspect _cellAspect;
+        private EcsFilter _requestFilter;
+
         public void Init(IEcsSystems systems)
         {
             _world = systems.GetWorld();
             _eventFilter = _world.Filter<RestartGameEvent>().End();
             
             _cellFilter = _world.Filter<CellComponent>().End();
+
+            _requestFilter = _world.Filter<RequestToRestartGame>().End();
         }
 
         public void Run(IEcsSystems systems)
         {
-            if (!Input.GetKey(_gameSettings.RestartKey)) return;
-            GameLog.Log("Restart Game", Color.red);
-            _gameRulesAspect.RestartGameEvent.Add(_world.NewEntity());
-            return;
+            if (Input.GetKeyUp(_gameSettings.RestartKey))
+            {
+                GameLog.Log("Restart Game", Color.red);
+                _gameRulesAspect.RestartGameEvent.Add(_world.NewEntity());
+                return;
+            }
+
+            foreach (var request in _requestFilter)
+            {
+                _gameRulesAspect.RestartGameEvent.Add(_world.NewEntity());
+                _gameRulesAspect.RequestToRestartGame.Del(request);
+            }
         }
     }
 }

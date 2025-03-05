@@ -1,14 +1,13 @@
-﻿namespace NAMESPACE
+﻿namespace Game.Ecs.Ui.HUD
 {
     using Cysharp.Threading.Tasks;
+    using Game.Ecs.GameRules.Components;
     using Leopotam.EcsLite;
-    using UniGame.AddressableTools.Runtime;
-    using UniGame.Core.Runtime;
-    using UniGame.Core.Runtime.Extension;
+    using NAMESPACE.ViewsAndModels;
+    using Systems;
     using UniGame.LeoEcs.Bootstrap.Runtime;
-    using UniGame.LeoEcs.Bootstrap.Runtime.Config;
+    using UniGame.LeoEcs.ViewSystem.Extensions;
     using UnityEngine;
-    using UnityEngine.AddressableAssets;
 
     /// <summary>
     /// ADD DESCRIPTION HERE
@@ -18,7 +17,11 @@
     {
         public override async UniTask InitializeFeatureAsync(IEcsSystems ecsSystems)
         {
-            
+            ecsSystems.ShowSingleOn<LooseGameComponent, LooseScreenView>();
+            ecsSystems.ShowSingleOn<WinGameComponent, WinScreenView>();
+            ecsSystems.CloseOn<RestartGameEvent, LooseScreenViewModel>();
+            ecsSystems.CloseOn<RestartGameEvent, WinScrennViewModel>();
+            ecsSystems.Add(new RestartByButtonSystem());
         }
     }
 }
