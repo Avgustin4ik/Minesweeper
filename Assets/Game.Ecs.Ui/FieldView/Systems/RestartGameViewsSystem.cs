@@ -1,20 +1,18 @@
-﻿namespace Game.Ecs.GameRules.Systems
+﻿namespace Game.Ecs.Ui.FieldView.Systems
 {
     using System;
     using System.Linq;
-    using Aspects;
-    using Components;
-    using Field.Cell.Aspects;
     using Field.Cell.Components;
+    using GameRules.Components;
     using Leopotam.EcsLite;
-    using Runtime.Services.FieldService;
-    using UniCore.Runtime.ProfilerTools;
     using UniGame.Core.Runtime.Extension;
     using UniGame.LeoEcs.Bootstrap.Runtime.Attributes;
     using UniGame.LeoEcs.Shared.Extensions;
+    using UniGame.LeoEcs.ViewSystem.Extensions;
     using UniGame.Runtime.ObjectPool.Extensions;
     using UnityEngine;
     using UnityEngine.Pool;
+    using ViewsAndModels;
 
     /// <summary>
     /// ADD DESCRIPTION HERE
@@ -28,28 +26,31 @@
 #endif
     [Serializable]
     [ECSDI]
-    public class RestartGameSystem : IEcsInitSystem, IEcsRunSystem
+    public class RestartGameViewsSystem : IEcsInitSystem, IEcsRunSystem
     {
         private EcsWorld _world;
+        private EcsFilter _cellViewFilter;
         private EcsFilter _eventFilter;
-        private EcsFilter _cellFilter;
-        private IFieldService _gameSettings;
-        private GameRulesAspect _gameRulesAspect;
-        private CellAspect _cellAspect;
+
         public void Init(IEcsSystems systems)
         {
             _world = systems.GetWorld();
-            _eventFilter = _world.Filter<RestartGameEvent>().End();
-            
-            _cellFilter = _world.Filter<CellComponent>().End();
+             _cellViewFilter = _world.ViewFilter<CellViewModel>()
+                .End();
+             _eventFilter = _world.Filter<RestartGameEvent>()
+                .End();
         }
 
         public void Run(IEcsSystems systems)
         {
-            if (!Input.GetKey(_gameSettings.RestartKey)) return;
-            GameLog.Log("Restart Game", Color.red);
-            _gameRulesAspect.RestartGameEvent.Add(_world.NewEntity());
-            return;
+            foreach (var @event in _eventFilter)
+            {
+                foreach (var cell in _cellViewFilter) 
+                {
+                    var model = _world.GetViewModel<CellViewModel>(cell);
+                    model.reset.Execute();
+                }
+            }
         }
     }
 }

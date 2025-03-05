@@ -2,6 +2,7 @@
 {
     using Components;
     using Cysharp.Threading.Tasks;
+    using GameRules.Systems;
     using Leopotam.EcsLite;
     using Leopotam.EcsLite.ExtendedSystems;
     using Systems;
@@ -23,6 +24,7 @@
             ecsSystems.Add(new DisplayFlagSystem());
             ecsSystems.Add(new OpenMineCellSystem());
             ecsSystems.Add(new OpenSaveCellSystem());
+            ecsSystems.Add(new RestartGameViewsSystem());
             // ecsSystems.Add(new DEBUG_MarkMinesSystem());
             // ecsSystems.Add(new DEBUG_MarkNeighborsSystem());
         }

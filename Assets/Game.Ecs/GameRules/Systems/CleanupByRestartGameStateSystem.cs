@@ -4,11 +4,7 @@
     using System.Linq;
     using Aspects;
     using Components;
-    using Field.Cell.Aspects;
-    using Field.Cell.Components;
     using Leopotam.EcsLite;
-    using Runtime.Services.FieldService;
-    using UniCore.Runtime.ProfilerTools;
     using UniGame.Core.Runtime.Extension;
     using UniGame.LeoEcs.Bootstrap.Runtime.Attributes;
     using UniGame.LeoEcs.Shared.Extensions;
@@ -28,28 +24,39 @@
 #endif
     [Serializable]
     [ECSDI]
-    public class RestartGameSystem : IEcsInitSystem, IEcsRunSystem
+    public class CleanupByRestartGameStateSystem : IEcsInitSystem, IEcsRunSystem
     {
         private EcsWorld _world;
         private EcsFilter _eventFilter;
-        private EcsFilter _cellFilter;
-        private IFieldService _gameSettings;
+        private EcsFilter _winFilter;
+        private EcsFilter _looseFilter;
         private GameRulesAspect _gameRulesAspect;
-        private CellAspect _cellAspect;
+        
         public void Init(IEcsSystems systems)
         {
             _world = systems.GetWorld();
-            _eventFilter = _world.Filter<RestartGameEvent>().End();
-            
-            _cellFilter = _world.Filter<CellComponent>().End();
+            _eventFilter = _world.Filter<RestartGameEvent>()
+                .End();
+            _looseFilter = _world.Filter<LooseGameComponent>()
+                .End();
+            _winFilter = _world.Filter<WinGameComponent>()
+                .End();
         }
 
         public void Run(IEcsSystems systems)
         {
-            if (!Input.GetKey(_gameSettings.RestartKey)) return;
-            GameLog.Log("Restart Game", Color.red);
-            _gameRulesAspect.RestartGameEvent.Add(_world.NewEntity());
-            return;
+            foreach (var @event in _eventFilter)
+            {
+                foreach (var loose in _looseFilter)
+                {
+                    _gameRulesAspect.LooseGame.TryRemove(loose);
+                }
+                foreach (var win in _winFilter)
+                {
+                    _gameRulesAspect.WinGame.TryRemove(win);
+                }
+            }
+
         }
     }
 }

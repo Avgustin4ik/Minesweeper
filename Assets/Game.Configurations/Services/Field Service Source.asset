@@ -20,4 +20,4 @@ MonoBehaviour:
     height: 10
     minesCount: 2
   gameSettings:
-    restartKey: 0
+    restartKey: 32

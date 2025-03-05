@@ -31,7 +31,7 @@
         {
             _world = systems.GetWorld();
             _filter = _world.Filter<CellComponent>()
-                .Inc<CellIsOpenComponent>()
+                .Inc<OpenCellForceComponent>()
                 .Inc<MineComponent>()
                 .End();
         }

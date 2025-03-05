@@ -32,11 +32,13 @@
             ecsSystems.Add(new DetectFirstClickSystem());
             ecsSystems.Add(new CalculateNeighborMinesSystem());
             ecsSystems.Add(new OpenSaveCellSystem());
+            ecsSystems.DelHere<ExplosionEvent>();
             ecsSystems.Add(new OpenMineCellSystem());
             ecsSystems.Add(new OpenCellSystem());
             ecsSystems.DelHere<OpenCellForceComponent>();
-            
             ecsSystems.Add(new PlaceMinesSystem());
+            
+
         }
     }
 }
