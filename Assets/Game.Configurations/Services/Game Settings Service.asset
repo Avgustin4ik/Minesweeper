@@ -19,6 +19,6 @@ MonoBehaviour:
     width: 10
     height: 10
     setMinesManually: 0
-    minesCount: 33
+    minesCount: 2
   gameSettings:
     restartKey: 32

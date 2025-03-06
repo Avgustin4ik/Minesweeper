@@ -36,7 +36,7 @@
         private EcsFilter _winEventFilter;
         private GameRulesAspect _gameRulesAspect;
         private EcsFilter _cellsFilter;
-
+        
         public void Init(IEcsSystems systems)
         {
             _world = systems.GetWorld();
@@ -49,17 +49,21 @@
                 .Inc<FlagComponent>()
                 .End();
             _cellsFilter = _world.Filter<CellComponent>()
-                .Exc<CellIsOpenComponent>().Exc<MineComponent>().End();
+                .Exc<MineComponent>()
+                .Exc<CellIsOpenComponent>()
+                .End();
         }
 
         public void Run(IEcsSystems systems)
         {
-            if (!_minesWithFlag.Has() || _mines.Has() && _cellsFilter.Has()) return;
+            if (_minesWithFlag.GetEntitiesCount() != _service.MinesCount) return;
             
-            if(_winEventFilter.Has()) return;
+            if (_cellsFilter.Has()) return;
+
+
+            if (_winEventFilter.Has()) return;
             GameLog.Log("Win Game, all mines are flagged", Color.green);
             _gameRulesAspect.WinGame.Add(_world.NewEntity());
-
         }
     }
 }
