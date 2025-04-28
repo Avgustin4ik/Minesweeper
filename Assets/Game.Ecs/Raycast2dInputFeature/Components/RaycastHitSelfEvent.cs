@@ -1,9 +1,9 @@
-﻿namespace Game.Ecs.Ability.SubFeatures.AbilitySequence.Components
+﻿namespace Game.Ecs.InputFeature
 {
     using System;
 
     /// <summary>
-    /// mark ability sequence as ready to be activated
+    /// ADD DESCRIPTION HERE
     /// </summary>
 #if ENABLE_IL2CPP
     using Unity.IL2CPP.CompilerServices;
@@ -13,8 +13,7 @@
     [Il2CppSetOption(Option.DivideByZeroChecks, false)]
 #endif
     [Serializable]
-    public struct AbilitySequenceReadyComponent
+    public struct RaycastHitSelfEvent
     {
-        
     }
 }
