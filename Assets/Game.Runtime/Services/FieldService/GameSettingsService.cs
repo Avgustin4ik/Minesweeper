@@ -27,5 +27,7 @@
             _fieldSettings.setMinesManually
                 ? _fieldSettings.minesCount
                 : _fieldSize.x * _fieldSize.y / 5;
+
+        public float Offset => _fieldSettings.offset;
     }
 }

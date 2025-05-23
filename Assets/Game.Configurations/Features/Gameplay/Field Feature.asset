@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: Field Feature
   m_EditorClassIdentifier: 
   isEnabled: 1
+  cellPrefab: {fileID: 3907493971247648276, guid: 8b96b762adf09164c80efc70ae76bc6d, type: 3}

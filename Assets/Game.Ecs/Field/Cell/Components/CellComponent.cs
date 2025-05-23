@@ -17,5 +17,6 @@
     public struct CellComponent
     {
         public Vector2Int position;
+        public Vector2 size;
     }
 }

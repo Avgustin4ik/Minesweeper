@@ -10,6 +10,7 @@
     using UniGame.Context.Runtime.Extension;
     using UniGame.Core.Runtime;
     using UniGame.LeoEcs.Bootstrap.Runtime;
+    using UniGame.LeoEcs.Converter.Runtime;
     using UniGame.LeoEcs.Shared.Extensions;
     using UnityEngine;
 
@@ -19,6 +20,7 @@
     [CreateAssetMenu(menuName = "Game/Feature/Gameplay/FiledFeature")]
     public class FieldFeature : BaseLeoEcsFeature
     {
+        public LeoEcsMonoConverter cellPrefab;
         public override async UniTask InitializeFeatureAsync(IEcsSystems ecsSystems)
         {
             var context = ecsSystems.GetShared<IContext>();
@@ -26,7 +28,7 @@
             var world = ecsSystems.GetWorld();
             world.SetGlobal(service);
             
-            ecsSystems.Add(new GenerateFieldSystem());
+            ecsSystems.Add(new GenerateFieldSystem(cellPrefab));
             ecsSystems.DelHere<GenerateFieldRequest>();
             ecsSystems.Add(new PlaceMinesSystem());
             ecsSystems.Add(new DetectFirstClickSystem());

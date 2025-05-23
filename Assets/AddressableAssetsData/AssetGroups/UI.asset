@@ -15,11 +15,6 @@ MonoBehaviour:
   m_GroupName: UI
   m_GUID: b8ae65090556c7f4caccfbf2086f425c
   m_SerializeEntries:
-  - m_GUID: 077aee17ebd0cf640a55b9fbb3a537e5
-    m_Address: Assets/Game.Content/UI/CellView.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 255a96aa8fad79348b8ae5159f4f5d57
     m_Address: Assets/Game.Content/UI/Panel Main.prefab
     m_ReadOnly: 0

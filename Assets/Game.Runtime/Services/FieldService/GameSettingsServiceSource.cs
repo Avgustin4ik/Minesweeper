@@ -11,6 +11,7 @@ namespace Game.Runtime.Services.FieldService
     [CreateAssetMenu(menuName = "Game/Services/FieldService Source", fileName = "FieldService Source")]
     public class GameSettingsServiceSource : DataSourceAsset<IGameSettingsService>
     {
+        
         public FieldSettings settings;
         public GameSettings gameSettings;
         protected override async UniTask<IGameSettingsService> CreateInternalAsync(IContext context)

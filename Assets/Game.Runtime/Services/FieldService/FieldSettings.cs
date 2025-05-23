@@ -16,5 +16,7 @@ namespace Game.Runtime.Services.FieldService
         [Range(1, 50)]
         [ShowIf("@this.setMinesManually")]
         public int minesCount;
+        
+        public float offset;
     }
 }

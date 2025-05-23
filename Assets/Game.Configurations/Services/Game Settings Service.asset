@@ -20,5 +20,6 @@ MonoBehaviour:
     height: 10
     setMinesManually: 0
     minesCount: 2
+    offset: 0.14
   gameSettings:
     restartKey: 32
